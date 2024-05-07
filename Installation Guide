@@ -1,1 +1,100 @@
-*
+STEP 1:
+
+Download the file admin_dashboard.py and gateman_dashboard.py
+
+STEP 2:
+Now create a project / root folder in your directory 
+STEP 3:
+add these files to the root folder/ project folder
+STEP 4: 
+crete two new folder named as captured, pdf (these folder save your pic and pdf separately) inside the root folder/ project folder 
+STEP 4:
+Open your PYTHON IDE and open these two python files admin_dashboard.py and gateman_dashboard.py 
+
+#make sure you intall tkinter gui 
+
+#and install all necessory libraries from cmd prompt 
+In this project, we are using the following libraries:
+
+1. **Tkinter**: This library is used for creating the graphical user interface (GUI) of the application.
+   - Installation: Tkinter usually comes pre-installed with Python. If not, you can install it using the following command:
+     ```
+     pip install tk
+     ```
+   - Documentation: [Tkinter Documentation](https://docs.python.org/3/library/tk.html)
+
+2. **MySQL Connector**: This library is used to connect Python applications with the MySQL database.
+   - Installation:
+     ```
+     pip install mysql-connector-python
+     ```
+   - Documentation: [MySQL Connector Documentation](https://dev.mysql.com/doc/connector-python/en/)
+
+3. **OpenCV**: OpenCV (Open Source Computer Vision Library) is used for capturing photos from the camera.
+   - Installation:
+     ```
+     pip install opencv-python
+     ```
+   - Documentation: [OpenCV Documentation](https://docs.opencv.org/master/)
+
+4. **ReportLab**: ReportLab is used for generating PDF documents.
+   - Installation:
+     ```
+     pip install reportlab
+     ```
+   - Documentation: [ReportLab Documentation](https://www.reportlab.com/docs/reportlab-userguide.pdf)
+
+Make sure to install these libraries using the provided commands before running the project.
+
+
+STEP 5:
+
+CREATE DATABASE DB_NAME;
+
+now create two table name as:
+1. gateman            
+2. gatepass_entry
+ 
+Here is TABLE STRUCTURE:
+
+gateman table:
++------------+-------------+------+-----+-------------------+-------------------+
+| Field      | Type        | Null | Key | Default           | Extra             |
++------------+-------------+------+-----+-------------------+-------------------+
+| Gateman_ID | int         | NO   | PRI | NULL              | auto_increment    |
+| Username   | varchar(50) | NO   | UNI | NULL              |                   |
+| Password   | varchar(50) | NO   |     | NULL              |                   |
+| Created_At | timestamp   | YES  |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
++------------+-------------+------+-----+-------------------+-------------------+
+
+ gatepass_entry table;
++------------------+--------------+------+-----+---------+----------------+
+| Field            | Type         | Null | Key | Default | Extra          |
++------------------+--------------+------+-----+---------+----------------+
+| Entry_ID         | int          | NO   | PRI | NULL    | auto_increment |
+| Gateman_ID       | int          | YES  | MUL | NULL    |                |
+| Pass_Number      | varchar(20)  | NO   | UNI | NULL    |                |
+| Date_and_Time    | datetime     | YES  |     | NULL    |                |
+| Valid_Until      | datetime     | YES  |     | NULL    |                |
+| Contact_Number   | varchar(11)  | YES  |     | NULL    |                |
+| Visitor_Name     | varchar(100) | YES  |     | NULL    |                |
+| Aadhar_Card      | varchar(12)  | YES  |     | NULL    |                |
+| Company_Name     | varchar(100) | YES  |     | NULL    |                |
+| Company_Address  | varchar(200) | YES  |     | NULL    |                |
+| Purpose_of_Visit | text         | YES  |     | NULL    |                |
+| Admin_In         | datetime     | YES  |     | NULL    |                |
+| Officer_Name     | varchar(100) | YES  |     | NULL    |                |
+| Designation      | varchar(100) | YES  |     | NULL    |                |
+| Vehicle_Number   | varchar(20)  | YES  |     | NULL    |                |
+| Photo_Path       | varchar(200) | YES  |     | NULL    |                |
++------------------+--------------+------+-----+---------+----------------+
+
+
+STEP 6:
+
+Now replace your own SQL details in admin and gateman dashboard.py files
+
+ENJOY :)
+
+
+
