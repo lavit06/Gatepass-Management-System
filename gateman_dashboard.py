@@ -16,9 +16,9 @@ class GatemanLogin:
         # Connect to MySQL database
         self.db = mysql.connector.connect(
             host="localhost",
-            user="root",
-            passwd="password",
-            database="oefhz_gp"
+            user="user_name", #replace with your database user name
+            passwd="your_password", #replace with your database password
+            database="database_name" #replace with your database name
         )
         self.cursor = self.db.cursor()
 
